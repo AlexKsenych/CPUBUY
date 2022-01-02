@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPUBUY</title>
+    <link rel="icon" type="image/x-icon" href="/img/icons/cpu-logo.svg">
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+<body class="body">
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <button class="header__wrapper__hamburger hamburger--3dx" type="button">
+                    <span class="hamburger-box">
+                      <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+                <div class="header__wrapper__logo">
+                    <img src="./img/logo/cpu-logo.svg" alt="logo" class="header__wrapper__logo__img">
+                    <h1 class="header__wrapper__logo__title">CPUBUY</h1>
+                </div>
+            </div>
+            <form id="searchForm" class="header__search" action="submit">
+                <input id="searchInput" class="header__search__input" type="text" placeholder="Search...">
+                <button class="header__search__submit" type="submit">
+                    <img class="header__search__submit__img" src="./img/icons/search.svg" alt="search">
+                </button>
+            </form>
+        </div>
+    </header>
+    <div class="aside">
+        <div class="aside__wrapper">
+            <div class="aside__wrapper__options">
+                <h2 class="aside__wrapper__options__title">Search by</h2>
+                <div class="aside__wrapper__options__filter">
+                    <div class="aside__wrapper__options__filter__item">
+                        <div class="aside__wrapper__options__filter__item__descr">From cheap to expensive</div>
+                        <input id="filterCheckbox0" type="checkbox">
+                    </div>
+                    <div class="aside__wrapper__options__filter__item">
+                        <div class="aside__wrapper__options__filter__item__descr">From expensive to cheap</div>
+                        <input id="filterCheckbox1" type="checkbox">
+                    </div>
+                </div>
+                <h2 class="aside__wrapper__options__title">Brend</h2>
+                <div class="aside__wrapper__options__filter">
+                    <div class="aside__wrapper__options__filter__item">
+                        <div class="aside__wrapper__options__filter__item__descr">Intel</div>
+                        <input id="brendCheckbox0" type="checkbox">
+                    </div>
+                    <div class="aside__wrapper__options__filter__item">
+                        <div class="aside__wrapper__options__filter__item__descr">AMD</div>
+                        <input id="brendCheckbox1" type="checkbox">
+                    </div>
+                </div>
+                <h2 class="aside__wrapper__options__title">Total</h2>
+                <div class="aside__wrapper__options__filter">
+                    <div class="aside__wrapper__options__filter__item">
+                        <div class="aside__wrapper__options__filter__item__descr">Price</div>
+                        <div id="filterPrice" class="aside__wrapper__options__filter__item__total"></div>
+                    </div>
+                    <div class="aside__wrapper__options__filter__item">
+                        <div class="aside__wrapper__options__filter__item__descr">GHz</div>
+                        <div id="filterSpeed" class="aside__wrapper__options__filter__item__total"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="content">
+    </div>
+    <div class="wrapper">
+        <div id="viewItem" class="viewItem">
+            <img class="viewItem__close" src="/img/icons/close.svg" alt="close">
+            <div class="viewItem__title">Specifications</div>
+            <div class="viewItem__brend">Intel</div>
+            <form class="viewItem__container" action="submit">
+                <div class="viewItem__container__product">
+                    <img class="viewItem__container__product__img" src="https://content.rozetka.com.ua/goods/images/big_tile/164390440.jpg" alt="processor">
+                    <input class="viewItem__container__product__input" disabled required type="text" placeholder="Image url" value="0">
+                </div>
+                <div id="specifications" class="viewItem__container__specifications">
+                    <div class="viewItem__container__specifications__info">Model 
+                        <input class="viewItem__container__specifications__info__input" disabled required type="text" placeholder="Model"/>
+                    </div>
+                    <div class="viewItem__container__specifications__info">Socket 
+                        <input class="viewItem__container__specifications__info__input" disabled required type="text" placeholder="Socket"/>
+                    </div>
+                    <div class="viewItem__container__specifications__info">Cores 
+                        <input class="viewItem__container__specifications__info__input" disabled required type="text" pattern="\d(\d+)?" placeholder="Cores" value="123"/>
+                    </div>
+                    <div class="viewItem__container__specifications__info">Cache 
+                        <input class="viewItem__container__specifications__info__input" disabled required type="text" pattern="^\d(\d+)?(\.?\d+)?" placeholder="Cache" value="123"/>
+                    </div>
+                    <div class="viewItem__container__specifications__info">Wattage 
+                        <input class="viewItem__container__specifications__info__input" disabled required type="text" pattern="^\d(\d+)?(\.?\d+)?" placeholder="Wattage"/>
+                    </div>
+                    <div class="viewItem__container__specifications__info">Speed 
+                        <input class="viewItem__container__specifications__info__input" disabled required type="text" pattern="^\d(\d+)?(\.?\d+)?" placeholder="Speed GHz"/>
+                    </div>
+                    <div class="viewItem__container__specifications__info">Price 
+                        <input class="viewItem__container__specifications__info__input" disabled required type="text" pattern="^\d(\d+)?(\.?\d+)?" placeholder="Price"/>
+                    </div>
+                    <div class="viewItem__container__specifications__info">Id 
+                        <input class="viewItem__container__specifications__info__input" disabled type="text"/>
+                    </div>
+                </div>
+                <button id="viewItemFormBtn" class="viewItem__container__btn" type="submit" disabled>Submit</button>
+            </form>
+            <button type="submit" id="viewItemBtn" class="viewItem__btn">
+                <img id="viewItemBtnImg" class="viewItem__btn__img" src="./img/icons/edit.svg" alt="edit">
+            </button>
+        </div>
+        <div id="createItem" class="createItem">
+            <img class="createItem__close" src="./img/icons/close.svg" alt="close">
+            <div class="createItem__title">Add new processor</div>
+            <form class="createItem__form" action="submit">
+                <div class="createItem__form__inputs">
+                    <input class="createItem__form__inputs__input" required type="text" placeholder="Model">
+                    <input class="createItem__form__inputs__input" required type="text" placeholder="Socket">
+                    <input class="createItem__form__inputs__input" required type="text" pattern="\d+" placeholder="Cores">
+                    <input class="createItem__form__inputs__input" required type="text" pattern="\d+" placeholder="Cache">
+                    <input class="createItem__form__inputs__input" required type="text" pattern="\d+" placeholder="Wattage">
+                    <input class="createItem__form__inputs__input" required type="text" pattern="\d+" placeholder="Speed GHz">
+                    <input class="createItem__form__inputs__input" required type="text" pattern="\d+" placeholder="Price">
+                    <input class="createItem__form__inputs__input" type="text" placeholder="Image url (optional)">
+                </div>
+                <div class="createItem__form__vs">
+                    <div class="createItem__form__vs__brend">
+                        Intel
+                        <input required id="selectIntel" class="createItem__form__vs__brend__input" type="checkbox">
+                    </div>
+                    <div class="createItem__form__vs__brend">
+                        AMD
+                        <input required id="SelectAmd" class="createItem__form__vs__brend__input" type="checkbox">
+                    </div>
+                </div>
+                <button class="createItem__form__btn" type="submit">Accept</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

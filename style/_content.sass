@@ -1,0 +1,51 @@
+.content
+    grid-area: content
+    display: flex
+    justify-content: space-around
+    align-items: center
+    flex-wrap: wrap
+    padding-bottom: 20px
+    &__item
+        margin: 17px 7px 0
+        cursor: pointer
+        position: relative
+        box-shadow: 5px 5px 9px rgba(0,0,0,0.1)
+        transition: 0.5s all
+        &__text
+            width: 80%
+            word-wrap: break-word
+        &:hover
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.4)
+        &__img
+            width: 280px
+            height: 280px
+        &__delete
+            cursor: pointer
+            position: absolute
+            bottom: 4px
+            right: 5px
+            border-radius: 30%
+            transition: 0.4s all
+            border: none
+            background: none
+            &__img
+                width: 48px
+                height: 48px
+            &:hover
+                box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5%);
+    &__addItem
+        width: 230px
+        height: 230px
+        margin: 10px 7px 0
+        cursor: pointer
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: rgba(0,0,0,0.1);
+        border-radius: 25%
+        transition: 0.5s all
+        &:hover
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.2)
+        &__img
+            width: 130px
+            height: 130px

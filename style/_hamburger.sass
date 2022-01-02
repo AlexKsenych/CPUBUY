@@ -1,0 +1,87 @@
+.header__wrapper__hamburger
+  padding: 15px 15px
+  display: inline-block
+  cursor: pointer
+  transition-property: opacity, filter
+  transition-duration: 0.15s
+  transition-timing-function: linear
+  font: inherit
+  color: inherit
+  text-transform: none
+  background-color: transparent
+  border: 0
+  margin: 0
+  overflow: visible
+
+.header__hamburger
+  &:hover
+    opacity: 0.7
+
+  &.is-active
+    &:hover
+      opacity: 0.7
+
+    .hamburger-inner
+      background-color: #000
+
+      &::before, &::after
+        background-color: #000
+
+.hamburger-box
+  width: 40px
+  height: 24px
+  display: inline-block
+  position: relative
+
+.hamburger-inner
+  display: block
+  top: 50%
+  margin-top: -2px
+  width: 40px
+  height: 4px
+  background-color: #000
+  border-radius: 4px
+  position: absolute
+  transition-property: transform
+  transition-duration: 0.15s
+  transition-timing-function: ease
+
+  &::before, &::after
+    width: 40px
+    height: 4px
+    background-color: #000
+    border-radius: 4px
+    position: absolute
+    transition-property: transform
+    transition-duration: 0.15s
+    transition-timing-function: ease
+
+  &::before, &::after
+    content: ""
+    display: block
+
+  &::before
+    top: -10px
+
+  &::after
+    bottom: -10px
+
+.hamburger--3dx
+  .hamburger-box
+    perspective: 80px
+
+  .hamburger-inner
+    transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1)
+
+    &::before, &::after
+      transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1)
+
+  &.is-active .hamburger-inner
+    background-color: transparent !important
+    transform: rotateY(180deg)
+
+    &::before
+      transform: translate3d(0, 10px, 0) rotate(45deg)
+
+    &::after
+      transform: translate3d(0, -10px, 0) rotate(-45deg)

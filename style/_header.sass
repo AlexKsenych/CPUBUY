@@ -1,0 +1,57 @@
+.header
+    height: 60px
+    width: 100%
+    margin: 0 auto
+    background-color: #659DBD
+    grid-area: header
+    .container
+        height: 60px
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__wrapper
+        display: flex
+        align-items: center
+        &__hamburger
+            display: none
+            filter: brightness(0) invert(1);
+        &__logo
+            display: flex
+            align-items: center
+            justify-content: center
+            &__img
+                filter: brightness(0) invert(1);
+                width: 60px
+                height: 52px
+            &__title
+                color: #fff
+                font-weight: bold
+    &__search
+        display: flex
+        align-items: center
+        &__input
+            width: 350px
+            height: 40px
+            border: none
+            border-radius: 25px
+            padding: 0 8px
+            &:focus
+                outline: none
+                box-shadow: 4px 2px 30px black
+        &__submit
+            width: 50px
+            height: 50px
+            margin-left: 20px
+            border: none
+            border-radius: 50%
+            background-color: #fff
+            cursor: pointer
+            margin-right: 7px
+            &:focus
+                outline: none
+                box-shadow: 2px 2px 20px black
+            &:hover
+                box-shadow: 2px 2px 20px black
+            &__img
+                height: 35px
+                width: 40px
