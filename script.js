@@ -102,7 +102,7 @@ function showProccerors(brend = '', sort = 'default', order, arr = processors) {
 
     items += `
     <div id="addItem" class="content__addItem">
-        <img src="/img/icons/plus.svg" alt="addItem" class="content__addItem__img">
+        <img src="./img/icons/plus.svg" alt="addItem" class="content__addItem__img">
     </div>
     `;
 
