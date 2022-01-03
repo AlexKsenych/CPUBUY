@@ -350,7 +350,7 @@ function showNewsApi() {
         if (this.readyState != 4) return;
 
         if (this.status != 200) {
-            alert( 'Error: ' + (this.status ? this.statusText : 'request failed') );
+            console.log( 'Error: ' + (this.status ? this.statusText : 'request failed') );
             return;
         }
 
