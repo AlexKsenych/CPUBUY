@@ -337,3 +337,37 @@ document.querySelector('.header__wrapper__hamburger').addEventListener('click', 
     e.currentTarget.classList.toggle('is-active');
     document.querySelector('.aside').classList.toggle('show');
 });
+
+
+function showNewsApi() {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'https://newsapi.org/v2/everything?q=processor&pageSize=1&apiKey=f5169bef374948d2aee6a98eec67b6b8');
+
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+
+        if (this.status != 200) {
+            alert( 'Error: ' + (this.status ? this.statusText : 'request failed') );
+            return;
+        }
+
+        const data = JSON.parse(this.response);
+
+        if (data.status !== 'ok') return;
+
+        document.querySelector('.aside__wrapper__news__img').src = data.articles[0].urlToImage;
+        document.querySelector('.aside__wrapper__news__descr__name').innerHTML = data.articles[0].source.name;
+        document.querySelector('.aside__wrapper__news__descr__title').innerHTML = data.articles[0].title;
+
+        document.querySelector('.aside__wrapper__news').addEventListener('click', () => {
+            window.location.href = data.articles[0].url;
+        })
+
+        document.querySelector('.aside__wrapper__news').style.display = 'flex';
+    }
+}
+
+showNewsApi()

@@ -9,6 +9,8 @@
         top: 20px
         display: flex
         justify-content: right
+        flex-direction: column
+        align-items: center
         &__options
             margin-top: 10px
             width: 315px
@@ -31,3 +33,26 @@
                         color: #fff
                         font-size: 21px
                         font-weight: bold
+        &__news
+            background-color: rgba(0, 0, 0, 0.2)
+            width: 310px
+            display: none
+            justify-content: right
+            flex-direction: column
+            align-items: center
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5)
+            cursor: pointer
+            transition: 0.5s all
+            &:hover
+                box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5)
+            &__img
+                max-width: 310px
+                max-height: 250px
+                object-fit: contain
+            &__descr
+                color: #fff
+                padding: 5px
+                &__name
+                    text-align: center
+                    font-size: 19px
+                    font-weight: 700
